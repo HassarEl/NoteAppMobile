@@ -1,0 +1,41 @@
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 600c3b1d9ecc8efc8d8cbcab7439f85da17a34dd)
++++ /dev/null	(revision 600c3b1d9ecc8efc8d8cbcab7439f85da17a34dd)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: app/.gitignore
+===================================================================
+diff --git a/app/.gitignore b/app/.gitignore
+deleted file mode 100644
+--- a/app/.gitignore	(revision 600c3b1d9ecc8efc8d8cbcab7439f85da17a34dd)
++++ /dev/null	(revision 600c3b1d9ecc8efc8d8cbcab7439f85da17a34dd)
+@@ -1,1 +0,0 @@
+-/build
+\ No newline at end of file
+Index: .gitignore
+===================================================================
+diff --git a/.gitignore b/.gitignore
+deleted file mode 100644
+--- a/.gitignore	(revision 600c3b1d9ecc8efc8d8cbcab7439f85da17a34dd)
++++ /dev/null	(revision 600c3b1d9ecc8efc8d8cbcab7439f85da17a34dd)
+@@ -1,15 +0,0 @@
+-*.iml
+-.gradle
+-/local.properties
+-/.idea/caches
+-/.idea/libraries
+-/.idea/modules.xml
+-/.idea/workspace.xml
+-/.idea/navEditor.xml
+-/.idea/assetWizardSettings.xml
+-.DS_Store
+-/build
+-/captures
+-.externalNativeBuild
+-.cxx
+-local.properties
