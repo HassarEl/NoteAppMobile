@@ -37,6 +37,9 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.SharedPreferences;
+import android.content.Intent;
+
 import ma.noteapp.R;
 import ma.noteapp.adapter.NoteAdapter;
 import ma.noteapp.database.NotesDatabase;
@@ -62,6 +65,14 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences prefs = getSharedPreferences("NoteAppPrefs", MODE_PRIVATE);
+        if (!prefs.getBoolean("isLoggedIn", false)) {
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+            return;
+        }
+
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

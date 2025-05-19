@@ -8,12 +8,15 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import ma.noteapp.entities.Note;
 import ma.noteapp.entities.User;
 
-@Database(entities = {User.class}, version = 3, exportSchema = false)
+@Database(entities = {User.class, Note.class}, version = 3, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase instance;
     public abstract UserDao userDao();
+
+    public abstract NoteDao noteDao();
     public static synchronized AppDatabase getInstance(Context context) {
         if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
