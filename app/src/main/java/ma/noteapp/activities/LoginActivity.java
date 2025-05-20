@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import android.content.SharedPreferences;
 
 import ma.noteapp.R;
 import ma.noteapp.ViewModel.UserViewModel;
@@ -56,6 +57,13 @@ public class LoginActivity extends AppCompatActivity {
 
         userViewModel.getCurrentUser().observe(this, user -> {
             if (user != null) {
+                //
+                SharedPreferences prefs = getSharedPreferences("NoteAppPrefs", MODE_PRIVATE);
+                           prefs.edit()
+                                      .putBoolean("isLoggedIn", true)
+                                      .putInt("userId", user.id)
+                                        .apply();
+
                 // Redirection vers MainActivity avec l'ID utilisateur
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 intent.putExtra("USER_ID", user.id);
